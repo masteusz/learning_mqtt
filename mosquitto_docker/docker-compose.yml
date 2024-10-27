@@ -1,4 +1,3 @@
-version: "3.7"
 services:
   # mqtt5 eclipse-mosquitto
   mqtt5:
@@ -12,6 +11,8 @@ services:
       - ./data:/mosquitto/data:rw
       - ./log:/mosquitto/log:rw
     restart: unless-stopped
+    stdin_open: true
+    tty: true
 
 # volumes for mapping data,config and log
 volumes:
